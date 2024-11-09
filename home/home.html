@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/home/home.css">
+</head>
+
+<body>
+    <div class="main-body">
+        <header>
+            <div class="header-container">
+                <div class="header">
+                    <div class="navbar-greetings">
+                        <p class="name-logo" id="nameLogo">Welcome</p>
+                        <h3 class="greet" id="greet">Good Morning</h3>
+                    </div>
+                    <a href="/login/login.html"><button id="logout" class="logout-btn">Logout</button></a>
+                </div>
+                <div class="celender-body">
+                    <button class="prev-month-btn" id="prevMonthBtn"><i class="fa-solid fa-angles-left"></i></button>
+                    <div class="calendar-month" id="calenderMonth">
+                    </div>
+                    <div class="calendar-container">
+                        <div class="calendar-wrapper" id="calendarWrapper">
+
+                        </div>
+                    </div>
+                    <button class="next-month-btn" id="nextMonthBtn"><i class="fa-solid fa-angles-right"></i></button>
+                </div>
+            </div>
+
+            <div class="main-contant">
+                <div class="oneday-contant-body" id="onedayContantBody">
+                    
+                    <div class="tasks" id="displayTask">
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Start complete task modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="completedTask" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body task-body">
+                        <span class="complete-task-name">Are you sure to complete the task? </span><span
+                            id="completeTaskName" class="complete-task-name"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="confirm-btn" data-bs-dismiss="modal"
+                            onclick="confirmTask(this)">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End complete task modal -->
+        <!-- Start Footer section -->
+        <footer>
+            <div class="add-plus">
+                <button class="bar-icon" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+                        class="fa-solid fa-bars"></i></button>
+                <button class="plus-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight" onclick="offcanvasAddBtn()"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </footer>
+        <!-- Start Footer section -->
+        <!-- Start Footer plus Offcanvas section -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+            <div class="offcanvas-body">
+                    <div class="right-offcanvas-header">
+                        <label for="lists" class="dropdown-list-title">Choose list:</label>
+                        <select name="lists" id="lists" class="dropdown-lists">
+
+                        </select>
+                        <p class="add-task-error" id="listTaskError"></p>
+                    </div>
+                    <div class="date-picker">
+                            <input type="date" class="date" id="selectedDate">
+                            <p class="add-task-error" id="addTaskDateError"></p>
+                    </div>
+                    <div class="add-task">
+                        <div class="add-task-container">
+                            <input type="text" placeholder="Write your task" class="task-input" id="addTaskValue">
+                            <button class="add-task-btn" onclick="addTask(this)">Add</button>
+                        </div>
+                        <p class="add-task-error" id="taskError"></p>
+                    </div>
+            </div>
+        </div>
+        <!-- End Footer plus Offcanvas section -->
+        <!-- Start Footer bar Offcanvas section -->
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-body">
+                <div class="statistics">
+                    <i class="fa-solid fa-chart-pie statistics-icon"></i>
+                    <button class="statistics-name" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                        onclick="statisticsBtn(this)">Statistics</button>
+                </div>
+                <div class="list-item">
+                    <p class="list-title">Lists</p>
+                    <div id="listItem">
+                        
+                    </div>
+                    <div class="new-list">
+                        <p class="new-list-btn"><i class="fa-solid fa-plus"></i><button class="new-list-btn"
+                                type="button" data-bs-toggle="modal" data-bs-target="#newList">New list</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer bar Offcanvas section -->
+        <!-- Start new list modal -->
+        <div class="modal fade" id="newList" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add list</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="add-list-model-body">
+                            <input type="text" placeholder="Add list" class="add-list-input-field" id="addListInput">
+                            <button type="button" class="add-list-btn btn btn-primary"
+                                onclick='addList(this)'>Add</button>
+                        </div>
+                        <p class="list-error" id="listError"></p>
+                    </div>
+                    <div id="addedList">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            onclick='confirmList(this)'>Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End new list modal -->
+        <!-- Start Model section -->
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Statistics</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body model-overflow">
+                        <div class="model-navbar">
+                            <button class="navbar-header active" id="weeklyData" onclick='weekly(this)'>Weekly</button>
+                            <button class="navbar-header" id="monthlyData" onclick='monthly(this)'>Monthly</button>
+                            <button class="navbar-header" id="yearlyData" onclick='yearly(this)'>Yearly</button>
+                            <button class="navbar-header" id="allDataValue" onclick='allData(this)'>All</button>
+                        </div>
+                        <div class="model-task-ratio">
+                            <div class="left-side">
+                                <div class="complete-task">
+                                    <h1 class="remain-task" id="completedTaskTotal">10</h1><span
+                                        class="slash">/</span><span class="total-task" id="totalTask">20</span>
+                                </div>
+                                <p class="task-heading">Tasks completed</p>
+                            </div>
+                            <div class="right-side">
+                                <div class="complete-ratio">
+                                    <h1 class="percent-ratio" id="completeTaskRatio">90</h1><span
+                                        class="percent">%</span>
+                                </div>
+                                <p class="task-heading">Completion rate</p>
+                            </div>
+                        </div>
+                        <div class="progress-part" id="progressList">
+                        </div>
+                        <div id="modelList">
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Model section -->
+    </div>
+    <script src="/bootstrap.min.js"></script>    
+    <script src="/home/home.js"></script>
+</body>
+</html>

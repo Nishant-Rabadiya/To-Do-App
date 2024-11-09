@@ -1,0 +1,621 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: var(--body-bg);
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.main-body {
+    width: 1080px;
+    height: 694px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+/* Start navber */
+.header-container{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.header {
+    width: 1080px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: #ebebeb;
+}
+
+.navbar-greetings {
+    display: flex;
+    align-items: center;
+}
+
+.greet {
+    padding: 20px 0px 20px 10px;
+    margin: 0px;
+    font-size: 20px;
+}
+
+.name-logo {
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    font-weight: 700;
+    margin: 0px;
+    color: white;
+}
+
+.logout-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 3px 15px 5px 15px;
+    background-color: #ff5400;
+    color: white;
+}
+
+.logout-btn:hover {
+    background-color: #f00707;
+}
+
+footer {
+    background-color: #ebebeb;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+/* End navber */
+/* Start main section */
+.oneday-contant-body {
+    border-bottom: 1px solid #ddd;
+}
+
+.main-contant {
+    height: 480px;
+    overflow: auto;
+    padding: 10px;
+}
+
+.main-contant::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.main-contant::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.main-contant::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+.shaw-day {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+.day-name {
+    margin: 0px;
+    padding: 5px;
+    font-weight: 700;
+    color: gray;
+}
+
+.task-list-name {
+    display: flex;
+    align-items: center;
+}
+
+.taskBtn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+
+.task-name {
+    font-size: 22px;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.tasks {
+    padding: 5px 10px;
+}
+
+.task-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.show-list-name {
+    display: flex;
+    align-items: center;
+}
+
+/* End main section */
+/* Start Footer section */
+.add-plus {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-top: 2px solid #ddd;
+}
+
+.plus-icon {
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    background-color: #00a86b;
+    color: #ffffff;
+}
+
+.bar-icon {
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background-color: transparent;
+    color: #878686b3;
+}
+
+.confirm-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 6px;
+    background-color: #00ca72;
+    color: white;
+}
+
+.complete-task-name {
+    margin: 0px;
+    padding: 10px 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.task-body {
+    display: flex;
+}
+
+/* End Footer section */
+/* Start dropdown offcanvas section */
+.right-offcanvas-header {
+    padding: 30px 0px 0px 0px;
+}
+
+.dropdown-list-title {
+    font-size: 20px;
+    font-weight: 700;
+    width: 32%;
+}
+
+.dropdown-lists {
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+.task-input {
+    width: 81%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.add-task-btn {
+    width: 15%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #00a500;
+    color: white;
+    font-size: 15px;
+    padding: 6px;
+}
+
+.date {
+    width: 100%;
+    font-size: larger;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
+.add-task-error {
+    color: red;
+    height: 27px;
+    margin: 0px;
+}
+
+.add-task-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* End dropdown offcanvas section */
+/* Start Calender section */
+
+.celender-body {
+    display: flex;
+
+}
+
+.prev-month-btn,
+.next-month-btn {
+    border: none;
+    background-color: transparent;
+}
+
+.next-month-btn {
+    width: 60px;
+}
+
+.calendar-container {
+    width: 100%;
+    /* margin: 0 auto; */
+    overflow-x: scroll;
+    /* border-bottom: 2px solid #ddd; */
+}
+
+.calendar-wrapper {
+    display: flex;
+}
+
+.calendar-month {
+    flex: 0 0 auto;
+    width: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.calendar-day {
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    background-color: transparent
+}
+
+.other-month {
+    color: #aaa;
+}
+
+.current-date {
+    color: #00a86b !important;
+    border-bottom: 3px solid #00a86b !important;
+}
+
+.past-date {
+    color: #ccc;
+}
+
+.calendar-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.calendar-container::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.calendar-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+/* End Calender section */
+/* Start Add offcanvas section */
+
+.offcanvas-header {
+    border-bottom: 2px solid #ddd;
+}
+
+.statistics {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 0px;
+}
+
+.statistics-name {
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 0px 15px;
+    font-weight: 600;
+}
+
+.statistics-icon {
+    font-size: 25px;
+    color: gray;
+}
+
+.list-item {
+    padding: 15px 0px 5px 0px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.lists {
+    display: flex;
+    padding: 10px 0px;
+    border-bottom: 2px solid #ddd;
+    justify-content: space-between;
+}
+
+.new-list {
+    display: flex;
+}
+
+.new-list-btn {
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    color: green;
+    margin: 7px 0px 0px 5px;
+    font-size: 17px;
+}
+
+.list-type {
+    margin: 0px;
+    height: 15px;
+    width: 15px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.list-title {
+    margin: 0px;
+    border-bottom: 2px solid #ddd;
+    padding: 0px 10px;
+    font-weight: 600;
+    color: gray;
+}
+
+.list-heading {
+    margin: 0px;
+    padding: 0px 10px;
+    font-weight: 600;
+}
+
+.list-tasks {
+    margin: 0px;
+}
+
+.total-list-task {
+    color: #908a8a;
+}
+/* End Add offcanvas section */
+/* Start add modal Section */
+.add-list-model-body {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-error {
+    margin: 0;
+    height: 12px;
+    color: red;
+}
+
+.add-list-input-field {
+    width: 80%;
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+.add-list-btn {
+    width: 19%;
+    border: 1px solid gray;
+}
+
+.added-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 5px 16px 5px;
+}
+
+.added-list-name {
+    margin: 0px;
+    width: 95%;
+    border: 1px solid gray;
+    padding: 3px 5px 3px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.added-list-remove-btn {
+    border: none;
+    background-color: transparent;
+    color: red;
+}
+
+/* End add modal Section */
+/* Start Model Section */
+
+.model-navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #efeeee;
+    padding: 5px 5px;
+    border-radius: 8px;
+}
+
+.navbar-header {
+    border: none;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #efeeee;
+    color: #aaa;
+    padding: 7px 0px;
+    font-weight: 500;
+}
+
+.active {
+    background-color: white;
+    color: black;
+}
+
+.left-side,
+.right-side {
+    width: 50%;
+}
+
+.model-task-ratio {
+    display: flex;
+    padding: 5px 25px 15px 25px
+}
+
+.complete-task,
+.complete-ratio {
+    display: flex;
+    width: 50%;
+    justify-content: start;
+}
+
+.task-heading {
+    margin: 0px;
+    font-weight: 400;
+    color: gray;
+}
+
+.percent-ratio,
+.remain-task {
+    margin: 0px;
+    font-size: 45px;
+}
+
+.percent,
+.total-task,
+.slash {
+    display: flex;
+    align-items: end;
+    font-size: 25px;
+    color: gray;
+}
+
+.progress {
+    margin: 15px 0px;
+}
+
+.progress-bar {
+    border-radius: 4px;
+}
+
+.progress-part {
+    margin-bottom: 20px 0px;
+}
+
+.model-lists {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0px;
+}
+
+.list-body-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 130px;
+}
+
+.list-body-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+}
+
+.list-body-ratio {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70px;
+}
+
+.list-name {
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.list-total-value {
+    color: #636262;
+    font-size: 15px;
+}
+
+.model-overflow {
+    max-height: 560px;
+    overflow: auto;
+}
+
+.model-overflow::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.model-overflow::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+.model-overflow::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #7c7b7b;
+}
+
+/* End Model Section */
+
+.completed-task {
+    text-decoration: line-through !important;
+}
+
+.active-date-btn {
+    color: rgb(122, 216, 14);
+    border-bottom: 3px solid rgb(122, 216, 14);
+}

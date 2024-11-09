@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: var(--body-bg);
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.form-body {
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-body form {
+    width: 500px;
+    padding: 8px 40px 45px 40px;
+    border-radius: 15px;
+    background-color: var(--form-body);
+    box-shadow: 0 34px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form>div {
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    background-color: var(--form-div);
+    color: var(--form-div);
+}
+
+.input-size input {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 0 5px 15px;
+    font-size: 15px;
+    box-shadow: 5px 6px 3px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input-size .count {
+    width: 90%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 0 5px 15px;
+    font-size: 15px;
+    box-shadow: 5px 6px 3px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.signup-button {
+    display: block;
+    height: 2em;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.signup-button button {
+    padding: 5px 0;
+    width: 70%;
+    border: none;
+    color: var(--signup-text);
+    border-radius: 5px;
+    background-color: var(--signup-bg);
+    box-shadow: 5px 6px 3px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.useradminInput {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    box-shadow: 5px 6px 3px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.footer {
+    padding-top: 5px;
+}
+
+.errors {
+    color: var(--error);
+    font-size: 14px;
+    height: 20px;
+}
+
+:root {
+    --body-bg: #c9e5ee;
+    --form-body: #87cefa;
+    --form-div: #ffffff;
+    --count-active-btn: #90ee90;
+    --count-remove-btn: #ff6161;
+    --signup-bg: #b3d9ef;
+    --signup-text: #000000;
+    --error: #ff0000;
+}
